@@ -10,7 +10,7 @@ import UIKit
 
 class CalcViewController: UIViewController, UITextFieldDelegate {
 
-    // Initalizing Text Fields
+    // Initializing Text Fields
     @IBOutlet weak var timeHr: UITextField!
     @IBOutlet weak var timeMin: UITextField!
     @IBOutlet weak var timeSec: UITextField!
@@ -20,12 +20,12 @@ class CalcViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configTapGesture()
-        configTextFields()
+        ConfigTapGesture()
+        ConfigTextFields()
     }
     
     // Removing keyboard when outside test field is tapped
-    private func configTapGesture() {
+    private func ConfigTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CalcViewController.handleTap))
         view.addGestureRecognizer(tapGesture)
     }
@@ -33,7 +33,7 @@ class CalcViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    private func configTextFields() {
+    private func ConfigTextFields() {
         timeHr.delegate = self
         timeMin.delegate = self
         timeSec.delegate = self
