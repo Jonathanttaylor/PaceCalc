@@ -28,6 +28,9 @@
                                 <state key="normal" backgroundImage="Calculate">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="calcPressed:" destination="yfz-BX-Jhc" eventType="touchUpInside" id="iFC-h2-WKg"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pace Calculator" translatesAutoresizingMaskIntoConstraints="NO" id="ESm-7I-v8y">
                                 <rect key="frame" x="75.5" y="104" width="263" height="135.5"/>
@@ -109,6 +112,9 @@
                                                         <state key="normal" title="Kilometers" backgroundImage="Button">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="distPressed:" destination="yfz-BX-Jhc" eventType="touchUpInside" id="PbA-XO-8sk"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -154,6 +160,9 @@
                                                         <state key="normal" title="per Km" backgroundImage="Button">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="pacePressed:" destination="yfz-BX-Jhc" eventType="touchUpInside" id="aAZ-7A-tau"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -180,6 +189,14 @@
                         <viewLayoutGuide key="safeArea" id="vQ6-k6-DOo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calculator" image="Calculator" id="dEG-ZX-soR"/>
+                    <connections>
+                        <outlet property="dist" destination="eLh-S5-8xj" id="du3-K3-pZP"/>
+                        <outlet property="paceMin" destination="1Xh-gS-a0l" id="Rdo-EJ-iA8"/>
+                        <outlet property="paceSec" destination="h1h-Jg-Ei7" id="hEj-Ey-EIw"/>
+                        <outlet property="timeHr" destination="nYK-Ig-HoH" id="e7Z-ce-eLC"/>
+                        <outlet property="timeMin" destination="EZc-jo-m3F" id="3I8-4D-qlM"/>
+                        <outlet property="timeSec" destination="ocf-vM-6wi" id="rll-hZ-WDB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCc-Uc-Pz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,6 +223,9 @@
                                 <state key="normal" backgroundImage="Calculate">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="CalcPressed:" destination="ZuG-aM-bIr" eventType="touchUpInside" id="VlT-ue-J3d"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Converter" translatesAutoresizingMaskIntoConstraints="NO" id="TuV-rT-RQf">
                                 <rect key="frame" x="80" y="100" width="254" height="77"/>
@@ -273,6 +293,9 @@
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="wKf-aa-x40"/>
                                                         </constraints>
                                                         <state key="normal" image="Convert" backgroundImage="Button"/>
+                                                        <connections>
+                                                            <action selector="ConvertOnePressed:" destination="ZuG-aM-bIr" eventType="touchUpInside" id="ofu-vK-QQr"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-er-gdO" userLabel="min/mile">
                                                         <rect key="frame" x="201" y="0.0" width="116" height="69.5"/>
@@ -358,6 +381,9 @@
                                                             <constraint firstAttribute="width" constant="25" id="anD-Ke-ACy"/>
                                                         </constraints>
                                                         <state key="normal" image="Convert" backgroundImage="Button"/>
+                                                        <connections>
+                                                            <action selector="ConvertTwoPressed:" destination="ZuG-aM-bIr" eventType="touchUpInside" id="OdJ-Qg-zEn"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oG0-rU-Lpw" userLabel="Mi">
                                                         <rect key="frame" x="200" y="0.0" width="115" height="69.5"/>
@@ -403,6 +429,14 @@
                         <viewLayoutGuide key="safeArea" id="jxX-2t-dSf"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Converter" image="Convert" id="oH2-V9-fad"/>
+                    <connections>
+                        <outlet property="dist2" destination="5wm-ib-2Tm" id="QgE-Of-u70"/>
+                        <outlet property="dist_1" destination="CnT-gb-1ne" id="dbL-xV-pyt"/>
+                        <outlet property="paceMin_1" destination="a1h-Eh-JRK" id="m5d-1D-7Fr"/>
+                        <outlet property="paceMin_2" destination="VfY-lS-zeO" id="pbr-jD-9pB"/>
+                        <outlet property="paceSec_1" destination="0gl-I9-7eS" id="xku-oU-cUn"/>
+                        <outlet property="paceSec_2" destination="A83-CS-C1v" id="ykD-aw-Y5N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5l0-nx-WwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
