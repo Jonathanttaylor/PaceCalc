@@ -23,8 +23,10 @@ class ConvertViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var paceLabel_2: UILabel!
     @IBOutlet weak var distLabel_1: UILabel!
     @IBOutlet weak var distLabel_2: UILabel!
+    @IBOutlet weak var error: UILabel!
     
     var distIsKm = true
+    var paceIsKm = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,17 @@ class ConvertViewController: UIViewController, UITextFieldDelegate {
         paceSec_1.delegate = self
         paceMin_2.delegate = self
         paceSec_2.delegate = self
-//        dist_1.delegate = self
+    }
+    
+    private func FindPaceDec(min:Double, sec: Double) -> Double {
+        if paceIsKm {
+            let dec = sec / 60
+            return (min + dec) * 1.609344
+        }
+        else {
+            let dec = sec / 60
+            return (min + dec) / 1.609344
+        }
     }
     
     private func ConvertDist(val: Double) -> String {
@@ -60,6 +72,17 @@ class ConvertViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func ConvertOnePressed(_ sender: Any) {
         view.endEditing(true)
+        
+        if paceIsKm {
+            paceIsKm = false
+            paceLabel_1.text = "Min/Mile"
+            paceLabel_2.text = "Min/Kilometer"
+        }
+        else {
+            paceIsKm = true
+            paceLabel_1.text = "Min/Kilometer"
+            paceLabel_2.text = "Min/Mile"
+        }
     }
     
     @IBAction func ConvertTwoPressed(_ sender: Any) {
@@ -81,13 +104,47 @@ class ConvertViewController: UIViewController, UITextFieldDelegate {
     @IBAction func CalcPressed(_ sender: Any) {
         view.endEditing(true)
         
+        error.text = ""
+        
+        // Converting Pace
+        var min = Double(paceMin_1.text!)
+        var sec = Double(paceSec_1.text!)
+        
+        if min == nil {
+            min = 0
+        }
+        
+        if sec == nil {
+            sec = 0
+        }
+        
+        if sec! >= 60 {
+            error.text = "Seconds value is too large"
+            return
+        }
+        
+        let paceDec = FindPaceDec(min: min!, sec: sec!)
+        
+        var minInt = Int(paceDec)
+        min = Double(Int(paceDec))
+        sec = paceDec - min!
+        var secInt = Int(round(sec! * 60))
+        
+        if secInt >= 60 {
+            minInt = minInt + 1
+            secInt = 0
+        }
+        
+        paceMin_2.text = String(minInt)
+        paceSec_2.text = String(secInt)
+        
         // Converting Distance
-        let tmp = Double(dist_1.text!)
-        if tmp == nil {
+        let val = Double(dist_1.text!)
+        if val == nil {
             dist_2.text = ConvertDist(val: 0)
         }
         else {
-            dist_2.text = ConvertDist(val: tmp!)
+            dist_2.text = ConvertDist(val: val!)
         }
     }
     

@@ -399,6 +399,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-jc-uEX" userLabel="Error Message">
+                                <rect key="frame" x="207" y="273" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -409,8 +415,10 @@
                             <constraint firstItem="MJ8-8f-5xB" firstAttribute="top" secondItem="Xgj-C8-1hA" secondAttribute="top" id="GlN-EP-2gm"/>
                             <constraint firstItem="MJ8-8f-5xB" firstAttribute="leading" secondItem="jxX-2t-dSf" secondAttribute="leading" id="T5V-0F-xAe"/>
                             <constraint firstItem="TuV-rT-RQf" firstAttribute="top" secondItem="Xgj-C8-1hA" secondAttribute="top" constant="100" id="UVc-Zf-cbE"/>
+                            <constraint firstItem="kG6-jc-uEX" firstAttribute="centerX" secondItem="Xgj-C8-1hA" secondAttribute="centerX" id="VD2-AW-KPl"/>
                             <constraint firstItem="S0m-eJ-4BB" firstAttribute="centerX" secondItem="Xgj-C8-1hA" secondAttribute="centerX" id="gg1-a7-7eS"/>
                             <constraint firstItem="S0m-eJ-4BB" firstAttribute="top" secondItem="bA0-CY-3Ag" secondAttribute="bottom" constant="60" id="hM3-bP-QIe"/>
+                            <constraint firstItem="bA0-CY-3Ag" firstAttribute="top" secondItem="kG6-jc-uEX" secondAttribute="bottom" constant="30" id="k4F-JH-OhF"/>
                             <constraint firstAttribute="bottom" secondItem="MJ8-8f-5xB" secondAttribute="bottom" id="lLk-fD-jzK"/>
                             <constraint firstItem="bA0-CY-3Ag" firstAttribute="centerY" secondItem="Xgj-C8-1hA" secondAttribute="centerY" id="ti0-0c-6hT"/>
                         </constraints>
@@ -422,6 +430,7 @@
                         <outlet property="distLabel_2" destination="ryR-lX-X1f" id="jqW-zd-yud"/>
                         <outlet property="dist_1" destination="CnT-gb-1ne" id="dbL-xV-pyt"/>
                         <outlet property="dist_2" destination="5wm-ib-2Tm" id="3hk-XA-dr4"/>
+                        <outlet property="error" destination="kG6-jc-uEX" id="WuL-6T-bmy"/>
                         <outlet property="paceLabel_1" destination="pLI-gx-JKs" id="l11-Op-qgi"/>
                         <outlet property="paceLabel_2" destination="WXz-kX-Wjf" id="TeT-hV-g20"/>
                         <outlet property="paceMin_1" destination="a1h-Eh-JRK" id="m5d-1D-7Fr"/>
