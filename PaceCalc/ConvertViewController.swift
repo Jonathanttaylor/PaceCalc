@@ -75,13 +75,13 @@ class ConvertViewController: UIViewController, UITextFieldDelegate {
         
         if paceIsKm {
             paceIsKm = false
-            paceLabel_1.text = "Min/Mile"
-            paceLabel_2.text = "Min/Kilometer"
+            paceLabel_1.text = "per Mile"
+            paceLabel_2.text = "per Kilometer"
         }
         else {
             paceIsKm = true
-            paceLabel_1.text = "Min/Kilometer"
-            paceLabel_2.text = "Min/Mile"
+            paceLabel_1.text = "per Kilometer"
+            paceLabel_2.text = "per Mile"
         }
     }
     
