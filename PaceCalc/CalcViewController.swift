@@ -18,6 +18,13 @@ class CalcViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var paceMin: UITextField!
     @IBOutlet weak var paceSec: UITextField!
     
+    @IBOutlet weak var error: UILabel!
+    
+    @IBOutlet weak var distButton: UIButton!
+    @IBOutlet weak var paceButton: UIButton!
+    
+    var varCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfigTapGesture()
@@ -44,10 +51,24 @@ class CalcViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func distPressed(_ sender: Any) {
         view.endEditing(true)
+        
+        if distButton.currentTitle == "Kilometers" {
+            distButton.setTitle("Miles", for: [.normal])
+        }
+        else {
+            distButton.setTitle("Kilometers", for: [.normal])
+        }
     }
     
     @IBAction func pacePressed(_ sender: Any) {
         view.endEditing(true)
+        
+        if paceButton.currentTitle == "per Km" {
+            paceButton.setTitle("per Mi", for: [.normal])
+        }
+        else {
+            paceButton.setTitle("per Km", for : [.normal])
+        }
     }
     
     @IBAction func calcPressed(_ sender: Any) {

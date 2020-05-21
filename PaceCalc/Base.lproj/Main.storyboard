@@ -164,10 +164,17 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-gd-3Qy">
+                                <rect key="frame" x="207" y="295.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vQ6-k6-DOo" firstAttribute="trailing" secondItem="wK0-bc-6pC" secondAttribute="trailing" id="8jP-ha-Cc8"/>
+                            <constraint firstItem="c0o-gd-3Qy" firstAttribute="centerX" secondItem="5rj-xD-dAp" secondAttribute="centerX" id="Alx-3y-ZFr"/>
                             <constraint firstItem="XHX-dU-3nJ" firstAttribute="centerY" secondItem="5rj-xD-dAp" secondAttribute="centerY" id="S9G-5B-ydK"/>
                             <constraint firstItem="wK0-bc-6pC" firstAttribute="leading" secondItem="vQ6-k6-DOo" secondAttribute="leading" id="Umy-eh-6A8"/>
                             <constraint firstAttribute="trailing" secondItem="wK0-bc-6pC" secondAttribute="trailing" id="WtI-53-cFW"/>
@@ -179,12 +186,16 @@
                             <constraint firstItem="Bq6-10-pNz" firstAttribute="top" secondItem="XHX-dU-3nJ" secondAttribute="bottom" constant="82" id="o8X-Lr-SHA"/>
                             <constraint firstItem="wK0-bc-6pC" firstAttribute="top" secondItem="5rj-xD-dAp" secondAttribute="top" id="saT-7G-Auq"/>
                             <constraint firstItem="ESm-7I-v8y" firstAttribute="top" secondItem="vQ6-k6-DOo" secondAttribute="top" constant="60" id="tUP-Gt-Q5T"/>
+                            <constraint firstItem="XHX-dU-3nJ" firstAttribute="top" secondItem="c0o-gd-3Qy" secondAttribute="bottom" constant="30" id="ui2-HZ-WXn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vQ6-k6-DOo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calculator" image="Calculator" id="dEG-ZX-soR"/>
                     <connections>
                         <outlet property="dist" destination="eLh-S5-8xj" id="du3-K3-pZP"/>
+                        <outlet property="distButton" destination="O2l-7S-xld" id="r43-nX-bEP"/>
+                        <outlet property="error" destination="c0o-gd-3Qy" id="0jT-Gd-zMY"/>
+                        <outlet property="paceButton" destination="CnF-qc-viO" id="XF4-DJ-vsK"/>
                         <outlet property="paceMin" destination="1Xh-gS-a0l" id="Rdo-EJ-iA8"/>
                         <outlet property="paceSec" destination="h1h-Jg-Ei7" id="hEj-Ey-EIw"/>
                         <outlet property="timeHr" destination="nYK-Ig-HoH" id="e7Z-ce-eLC"/>

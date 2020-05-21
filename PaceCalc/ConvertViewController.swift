@@ -50,15 +50,30 @@ class ConvertViewController: UIViewController, UITextFieldDelegate {
         paceSec_2.delegate = self
     }
     
-    private func FindPaceDec(min:Double, sec: Double) -> Double {
+    private func ConvertPace(min:Double, sec: Double) {
+        var paceDec:Double
+        
         if paceIsKm {
             let dec = sec / 60
-            return (min + dec) * 1.609344
+            paceDec = (min + dec) * 1.609344
         }
         else {
             let dec = sec / 60
-            return (min + dec) / 1.609344
+            paceDec = (min + dec) / 1.609344
         }
+        
+        var minInt = Int(paceDec)
+        let minDec = Double(Int(paceDec))
+        let secDec = paceDec - minDec
+        var secInt = Int(round(secDec * 60))
+              
+        if secInt >= 60 {
+            minInt = minInt + 1
+            secInt = 0
+        }
+              
+        paceMin_2.text = String(minInt)
+        paceSec_2.text = String(secInt)
     }
     
     private func ConvertDist(val: Double) -> String {
@@ -123,20 +138,7 @@ class ConvertViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let paceDec = FindPaceDec(min: min!, sec: sec!)
-        
-        var minInt = Int(paceDec)
-        min = Double(Int(paceDec))
-        sec = paceDec - min!
-        var secInt = Int(round(sec! * 60))
-        
-        if secInt >= 60 {
-            minInt = minInt + 1
-            secInt = 0
-        }
-        
-        paceMin_2.text = String(minInt)
-        paceSec_2.text = String(secInt)
+        ConvertPace(min: min!, sec: sec!)
         
         // Converting Distance
         let val = Double(dist_1.text!)
